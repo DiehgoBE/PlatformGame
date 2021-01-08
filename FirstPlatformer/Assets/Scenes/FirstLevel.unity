@@ -1594,7 +1594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48926514, y: -0.035676837, z: -10}
+  m_LocalPosition: {x: 0.48954862, y: 0.0000053048134, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2493,6 +2493,7 @@ GameObject:
   - component: {fileID: 1167793786}
   - component: {fileID: 1167793789}
   - component: {fileID: 1167793790}
+  - component: {fileID: 1167793791}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2559,13 +2560,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6324483575331556627, guid: c2c08c932c2054a0da13bc4dd9db298d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2c08c932c2054a0da13bc4dd9db298d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.4}
+  m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2579,7 +2579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167793785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.408, y: -0.566, z: 0}
+  m_LocalPosition: {x: -1.408, y: -0.527, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2616,6 +2616,25 @@ MonoBehaviour:
   rbPlayer: {fileID: 1167793786}
   speed: 3.5
   jumpSpeed: 200
+--- !u!95 &1167793791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167793785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 032f5b7b96b91444dae6b49c195d6c6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1241628223
 GameObject:
   m_ObjectHideFlags: 3
@@ -2767,7 +2786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296174343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93044955, y: -0.027811646, z: -10}
+  m_LocalPosition: {x: -0.93044955, y: 0.011188328, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1241628224}
