@@ -6929,6 +6929,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5632243152722889036, guid: d73c7bcd844048c4b936e011134ff334,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3032582479867609054, guid: d73c7bcd844048c4b936e011134ff334,
         type: 3}
       propertyPath: m_CellSize.x
