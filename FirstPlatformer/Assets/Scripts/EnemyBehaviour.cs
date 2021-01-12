@@ -8,7 +8,8 @@ public class EnemyBehaviour : MonoBehaviour
     float timeBeforeChange;
     public float delay = .5f;
     public float speed = .3f;
-
+    SpriteRenderer spEnemy;
+    Animator animEnemy;
 
 
 
@@ -16,12 +17,20 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody2D>();
+        spEnemy = GetComponent<SpriteRenderer>();
+        animEnemy = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         rbEnemy.velocity = Vector2.right * speed;
+
+        if (speed > 0)
+            spEnemy.flipX = false;
+        else if (speed < 0)
+            spEnemy.flipX = true;
+
 
         if (timeBeforeChange < Time.time)
         {
@@ -33,4 +42,21 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (transform.position.y + .03f < collision.transform.position.y)
+            {
+                animEnemy.SetBool("isDead", true);
+            }
+        }
+    }
+
+    public void DisableEnemy()
+    {
+        gameObject.SetActive(false);
+    }
+
 }
