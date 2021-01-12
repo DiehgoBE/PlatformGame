@@ -10,6 +10,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float speed = .3f;
     SpriteRenderer spEnemy;
     Animator animEnemy;
+    ParticleSystem enemyPart;
 
 
 
@@ -19,6 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
         rbEnemy = GetComponent<Rigidbody2D>();
         spEnemy = GetComponent<SpriteRenderer>();
         animEnemy = GetComponent<Animator>();
+        enemyPart = GameObject.Find("EnemyParticle").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
             if (transform.position.y + .03f < collision.transform.position.y)
             {
+                enemyPart.transform.position = transform.position;
+                enemyPart.Play();
                 animEnemy.SetBool("isDead", true);
             }
         }

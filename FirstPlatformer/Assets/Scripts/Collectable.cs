@@ -8,13 +8,13 @@ public class Collectable : MonoBehaviour
 {
     public static int collectableQuantity = 0;
     public Text collectableText;
-
+    ParticleSystem collectablePart;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        collectablePart = GameObject.Find("CollectableParticle").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -27,6 +27,9 @@ public class Collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collectablePart.transform.position = transform.position;
+            collectablePart.Play();
+
             gameObject.SetActive(false);
 
             collectableQuantity++;
