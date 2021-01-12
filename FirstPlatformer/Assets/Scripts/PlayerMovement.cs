@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = .5f;
     public float jumpSpeed = 300f;
     bool isGrounded = true;
+    public Animator playerAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,26 @@ public class PlayerMovement : MonoBehaviour
     {
         rbPlayer.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rbPlayer.velocity.y);
 
+        if (Input.GetAxis("Horizontal") == 0)
+        {
+            playerAnim.SetBool("isWalking", false);
+        }else if (Input.GetAxis("Horizontal") < 0)
+        {
+            playerAnim.SetBool("isWalking", true);
+            GetComponent<SpriteRenderer>().flipX = true;
+        }else if (Input.GetAxis("Horizontal") > 0)
+        {
+            playerAnim.SetBool("isWalking", true);
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
         if (isGrounded)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rbPlayer.AddForce(Vector2.up * jumpSpeed);
                 isGrounded = false;
+                playerAnim.SetTrigger("Jump");
             }
         }
     }
