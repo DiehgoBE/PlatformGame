@@ -11,6 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     SpriteRenderer spEnemy;
     Animator animEnemy;
     ParticleSystem enemyPart;
+    AudioSource enemyAudio;
 
 
 
@@ -21,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
         spEnemy = GetComponent<SpriteRenderer>();
         animEnemy = GetComponent<Animator>();
         enemyPart = GameObject.Find("EnemyParticle").GetComponent<ParticleSystem>();
+        enemyAudio = GetComponentInParent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,10 +51,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (transform.position.y + .03f < collision.transform.position.y)
+            if (transform.position.y + .15f < collision.transform.position.y)
             {
                 enemyPart.transform.position = transform.position;
                 enemyPart.Play();
+                enemyAudio.Play();
                 animEnemy.SetBool("isDead", true);
             }
         }
