@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rbPlayer;
     public float speed = .5f;
     public float jumpSpeed = 300f;
-    bool isGrounded = true;
+    public bool isGrounded = true;
     public Animator playerAnim;
 
     // Start is called before the first frame update

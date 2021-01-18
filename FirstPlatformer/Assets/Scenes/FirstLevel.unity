@@ -13606,6 +13606,7 @@ GameObject:
   - component: {fileID: 1167793786}
   - component: {fileID: 1167793789}
   - component: {fileID: 1167793790}
+  - component: {fileID: 1167793792}
   - component: {fileID: 1167793791}
   m_Layer: 0
   m_Name: Player
@@ -13729,6 +13730,7 @@ MonoBehaviour:
   rbPlayer: {fileID: 1167793786}
   speed: 2.5
   jumpSpeed: 200
+  isGrounded: 1
   playerAnim: {fileID: 1167793791}
 --- !u!95 &1167793791
 Animator:
@@ -13749,6 +13751,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1167793792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167793785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6624c93095845c489ca305143d29740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 73489703}
+  - {fileID: 2066506302}
+  - {fileID: 216533402}
+  changeScene: {fileID: 4100447917565783161}
 --- !u!1 &1170449220
 GameObject:
   m_ObjectHideFlags: 0
